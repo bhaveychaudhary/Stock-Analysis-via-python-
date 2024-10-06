@@ -16,9 +16,7 @@ def get_stock_basic_data(ticker):
     browser.get(url)
     time.sleep(2)
 
-    # Comprobamos que la dirección es la adecuada, en otro caso se trata de un error
     if browser.current_url == "https://roic.ai/404":
-        # errores.append(ticker)
         browser.close()
         browser.quit()
         return
@@ -55,7 +53,6 @@ def get_stock_basic_data(ticker):
             return_5_years_stock, return_5_years_sp500, return_3_years_stock, return_3_years_sp500, return_1_year_stock, return_1_year_sp500,
             revenue_per_share, fcf_per_share, capex_per_share]
 
-    # Creamos un dataframe con los datos la tabla
     index = ["Name", "Currency", "Sector", "Industry", "Country", "IPO","Insider Percentage", "Institution Percentage", "Summary", "Dividend Yield", "Exchange", "EPS",
             "Dividend per Share", "Return 5 Years Stock", "Return 5 Years S&P 500", "Return 3 Years Stock", "Return 3 Years S&P 500", "Return 1 Year Stock", "Return 1 Year S&P 500",
             "Revenue per Share", "FCF per Share", "Capex per Share"]
